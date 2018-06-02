@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 
-class Base extends PureComponent {
+class PizzaCart extends PureComponent {
 
     render() {
 
         return (
-            <p>Bases!</p>
+            <p>Total spend!</p>
         )
     }
 }
@@ -18,4 +18,4 @@ const mapStateToProps = (reduxState) => {
     }
 }
 
-export default connect(mapStateToProps)(Base)
+export default connect(mapStateToProps)(PizzaCart)
