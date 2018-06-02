@@ -4,17 +4,24 @@ import { connect } from 'react-redux'
 
 class PizzaCart extends PureComponent {
 
+    calculateTotal = (x) => {
+        return x.reduce((a, b) => a + b, 0)
+    }
+
     render() {
 
         return (
-            <p>Total spend!</p>
+            <div>
+                <h2>Total spend!</h2>
+                <p className="total">Total spend: {this.calculateTotal(this.props.total)}</p>
+            </div>
         )
     }
 }
 
-const mapStateToProps = (reduxState) => {
+const mapStateToProps = (state) => {
     return {
-
+        total: state.pizzaState
     }
 }
 
