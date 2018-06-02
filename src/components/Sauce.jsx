@@ -9,10 +9,10 @@ class Sauce extends PureComponent {
             <div>
                 <h2>Sauces!</h2>
                     <form>
-                        <input type="checkbox" /><li>White sauce</li>
-                        <input type="checkbox" /><li>Red sauce</li>
-                        <input type="checkbox" /><li>Double red sauce € 1,00</li>
-                        <input type="checkbox" /><li>Mix it up € 1,50 </li>
+                        <input type="radio" name="sauce" /><li>White sauce</li>
+                        <input type="radio" name="sauce" /><li>Red sauce</li>
+                        <input type="radio" name="sauce" /><li>Double red sauce € 1,00</li>
+                        <input type="radio" name="sauce" /><li>Mix it up € 1,50 </li>
                     </form>
             </div>
         )

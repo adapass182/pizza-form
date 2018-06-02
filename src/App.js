@@ -8,7 +8,9 @@ import './App.css'
 // Actions
 
 // Components
-import PizzaContainer from './container/PizzaContainer'
+import Base from './components/Base'
+import Sauce from './components/Sauce'
+import Toppings from './components/Toppings'
 import PizzaCart from './components/PizzaCart'
 
 
@@ -17,7 +19,9 @@ class App extends Component {
         return (
             <div className="App">
                 <h1 className="App-title">Welcome to NewAgePizza</h1>
-                <PizzaContainer />
+                <Base />
+                <Sauce />
+                <Toppings />
                 <PizzaCart />
             </div>
           );

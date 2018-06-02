@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { addBase, removeBase } from '../actions/base_a'
+import {bases} from '../pizzadata'
 
 class Base extends PureComponent {
 
@@ -13,20 +14,18 @@ class Base extends PureComponent {
         return (
             <div>
                 <h2>Bases!</h2>
-                        <form>
-                            <input type="radio" name="base" value='8.99' /><li>25cm NY Style € 8,99</li>
-                            <input type="radio" name="base" /><li>30cm NY Style € 11,49</li>
-                            <input type="radio" name="base" /><li>35cm NY Style € 13,49</li>
-                            <input type="radio" name="base" /><li>20cm NY Style € 6,45</li>
-                        </form>
+                <div className="bases">
+                {bases.map((base) => {
+                    return (<li key={base.id}>Size:{base.desc} Price:{base.price}<input type="radio" name="bases" /></li>)
+                })}
+                </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = (reduxState) => {
+const mapStateToProps = (state) => {
     return {
-
     }
 }
 
