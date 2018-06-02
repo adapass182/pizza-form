@@ -1,23 +1,22 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { addBase, removeBase } from '../actions/base_a'
-import {bases} from '../pizzadata'
+
 
 class Base extends PureComponent {
 
     render() {
 
-        const handleChangeBase = () => {
-            this.props.addBase()
-        }
+        const bases = this.props.bases
 
         return (
             <div>
                 <h2>Bases!</h2>
-                <div className="bases">
-                {bases.map((base) => {
-                    return (<li key={base.id}>Size:{base.desc} Price:{base.price}<input type="radio" name="bases" /></li>)
-                })}
+                <div name="bases">
+                    <form>
+                        {bases.map((base) => {
+                            return (<ul><input type="radio" name="base" value={base.price} onClick={this.props.onClick}/><li key={base.id}>Size:{base.desc} Price:{base.price}</li></ul>)
+                        })}
+                    </form>
                 </div>
             </div>
         )
@@ -26,7 +25,8 @@ class Base extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
+        bases: state.menu[0]
     }
 }
 
-export default connect(mapStateToProps, { addBase, removeBase })(Base)
+export default connect(mapStateToProps)(Base)

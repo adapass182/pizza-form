@@ -6,7 +6,7 @@ export const bases = [
     {id: 4, desc: "20cm NY Style", price: 6.45}
 ]
 
-export const sauce = [
+export const sauces = [
     {id: 1, desc: "White sauce", price: 0},
     {id: 2, desc: "Red sauce", price: 0},
     {id: 3, desc: "Double red sauce", price: 1},
@@ -15,7 +15,7 @@ export const sauce = [
 
 
 // Max three toppings:
-export const topping = [
+export const toppings = [
     {id: 1, desc: "Pineapple", price: .5},
     {id: 2, desc: "Corn", price: .5},
     {id: 3, desc: "Olives (green)", price: .5},
