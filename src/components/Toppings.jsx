@@ -2,22 +2,25 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 //Actions:
-import { addTopping } from '../actions/topping_a'
+import { addTopping, removeTopping } from '../actions/topping_a'
+
 
 class Toppings extends PureComponent {
 
     toppingCount = 0
 
     handleChange = (event) => {
-        this.props.addTopping(event.target.value)
-        if (!event.target.checked) {
-            --this.toppingCount
-        }
         if (event.target.checked && this.toppingCount < 3) {
             ++this.toppingCount
+            return this.props.addTopping(event.target.value)
         } 
-        else {
-            return event.target.checked = false && console.log("Max three toppings pls!")
+        if (event.target.checked && this.toppingCount === 3) {
+            window.alert("Maximum of three toppings please")
+            return event.target.checked = false
+        }
+        if (!event.target.checked && this.toppingCount <= 3) {
+            --this.toppingCount
+            return this.props.removeTopping()
         }
     }
 
@@ -35,7 +38,7 @@ class Toppings extends PureComponent {
                                         <label>
                                             <input 
                                             type="checkbox"
-                                            name="topping"
+                                            name={topping.desc}
                                             value={topping.price}
                                             onChange={this.handleChange}
                                             />
@@ -57,4 +60,4 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default connect(mapStateToProps, { addTopping })(Toppings)
+export default connect(mapStateToProps, { addTopping, removeTopping })(Toppings)

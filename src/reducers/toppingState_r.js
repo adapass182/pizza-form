@@ -2,10 +2,12 @@ export default (state = [0], { type, payload } = {}) => {
     
     switch (type) {
         case 'ADD_TOPPING':
-            state = []
-            return state.concat(parseFloat(payload))
+            state = state.concat(parseFloat(payload))
+            return state
+        case 'REMOVE_TOPPING':
+            state = state.splice(-1, 1)
+            return state
     default:
-      return state
+        return state
     }
-  }
-  
+}

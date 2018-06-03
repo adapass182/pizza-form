@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 class PizzaCart extends PureComponent {
 
     calculateTotal = (value) => {
-        return value.reduce((a, b) => a + b, 0)
+        value = value.reduce((a, b) => a + b, 0)
+        return value.toFixed(2)
     }
 
     render() {
@@ -23,7 +24,7 @@ class PizzaCart extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        total: state.pizzaState.concat(state.baseState).concat(state.sauceState).concat(state.toppingState)
+        total: state.pizzaState.concat(state.baseState).concat(state.sauceState).concat(state.toppingState.reduce((a, b) => a + b, 0))
     }
 }
 
