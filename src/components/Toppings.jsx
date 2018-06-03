@@ -6,8 +6,19 @@ import { addTopping } from '../actions/topping_a'
 
 class Toppings extends PureComponent {
 
+    toppingCount = 0
+
     handleChange = (event) => {
         this.props.addTopping(event.target.value)
+        if (!event.target.checked) {
+            --this.toppingCount
+        }
+        if (event.target.checked && this.toppingCount < 3) {
+            ++this.toppingCount
+        } 
+        else {
+            return event.target.checked = false && console.log("Max three toppings pls!")
+        }
     }
 
     render() {

@@ -40,7 +40,7 @@ class Sauce extends PureComponent {
                                         value={sauce.price}
                                         onChange={this.handleChange}
                                         />
-                                            {sauce.desc} €{sauce.price}
+                                            {sauce.desc} (+ €{sauce.price})
                                     </label>
                                 </li>)
                             }
