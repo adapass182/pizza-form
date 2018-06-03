@@ -9,7 +9,7 @@ class Base extends PureComponent {
 
     handleChange = (event) => {
         this.props.addBase(event.target.value)
-      }
+    }
       
     render() {
 
