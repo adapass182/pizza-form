@@ -1,8 +1,9 @@
-export default (state = [10, 8, 4, 7, 68, 75], { type, payload } = {}) => {
+export default (state = [0, 0], { type, payload } = {}) => {
     
     switch (type) {
         case 'ADD_BASE':
-            return state.push(payload)
+            state.push(payload)
+            return state
         case 'REMOVE_BASE':
             return state
     default:

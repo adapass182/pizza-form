@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 
 class PizzaCart extends PureComponent {
 
-    calculateTotal = (x) => {
-        return x.reduce((a, b) => a + b, 0)
+    calculateTotal = (value) => {
+        return value.reduce((a, b) => a + b, 0)
     }
 
     render() {

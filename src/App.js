@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1 className="App-title">Welcome to NewAgePizza</h1>
-                <Base onChange={console.log("hi Adam")}/>
+                <Base />
                 <Sauce />
                 <Toppings />
                 <PizzaCart />
