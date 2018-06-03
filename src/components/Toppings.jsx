@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 //Actions:
 import { addTopping, remTopping } from '../actions/topping_a'
 
+// Styles:
+import Paper from 'material-ui/Paper'
+import Subheader from 'material-ui/Subheader'
+import List from 'material-ui/List'
+
 
 class Toppings extends PureComponent {
 
@@ -28,27 +33,31 @@ class Toppings extends PureComponent {
 
         return (
             <div>
-                <h2>Toppings!</h2>
-                <h4>Choose up to three toppings, only 50cents each:</h4>
-                <div className="toppings">
-                    <form>
-                        <ul>
-                        {this.props.toppings.map((topping) => {
-                            return (<li key={topping.id}>
-                                        <label>
-                                            <input 
-                                            type="checkbox"
-                                            name={topping.desc}
-                                            value={topping.price}
-                                            onChange={this.handleChange}
-                                            />
-                                                {topping.desc}
-                                        </label>
-                                    </li>)
-                        })}
-                        </ul>
-                    </form>
-                </div>
+                <Subheader>
+                    <h2>Get some toppings:</h2>
+                    <h4>Choose up to three toppings at only €.50 each!</h4>
+                </Subheader>
+                <Paper>
+                    <div className="toppings">
+                        <form>
+                            <List>
+                            {this.props.toppings.map((topping) => {
+                                return (<li key={topping.id}>
+                                            <label>
+                                                <input 
+                                                type="checkbox"
+                                                name={topping.desc}
+                                                value={topping.price}
+                                                onChange={this.handleChange}
+                                                />
+                                                    {topping.desc}
+                                            </label>
+                                        </li>)
+                            })}
+                            </List>
+                        </form>
+                    </div>
+                </Paper>
             </div>
         )
     }

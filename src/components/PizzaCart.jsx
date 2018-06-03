@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 //Actions:
 import { addDrone, remDrone } from '../actions/drone_a'
 
+//Syling:
+import Subheader from 'material-ui/Subheader'
+import Paper from 'material-ui/Paper'
+
 class PizzaCart extends PureComponent {
 
     calculateTotal = (value) => {
@@ -30,19 +34,24 @@ class PizzaCart extends PureComponent {
 
         return (
             <div>
-                <h3>Want super fast drone-delivery with that?</h3>
-                <form>
-                    <label>
-                        <input
-                        type="checkbox"
-                        name="dronedelivery"
-                        onChange={this.handleChange}
-                        />
-                        Yes please! (+10% to total)
-                    </label>
-                </form>
-                <h2>Total spend!</h2>
-                <p className="total">Total spend: {this.calculateTotal(this.props.total)}</p>
+                <Subheader>
+                    <h2>Want super fast drone-delivery with that?</h2>
+                </Subheader>
+                <Paper>
+                    <form>
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="dronedelivery"
+                            onChange={this.handleChange}
+                            />
+                            Yes please! (+10% to total)
+                        </label>
+                    </form>
+                </Paper>
+                <Subheader>
+                    <h2>Total spend: {this.calculateTotal(this.props.total)}</h2>
+                </Subheader>
             </div>
         )
     }

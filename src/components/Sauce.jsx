@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 // Actions:
 import { addSauce } from '../actions/sauce_a'
 
+// Styles:
+import Paper from 'material-ui/Paper'
+import Subheader from 'material-ui/Subheader'
+import List from 'material-ui/List'
+
 class Sauce extends PureComponent {
 
     handleChange = (event) => {
@@ -14,41 +19,45 @@ class Sauce extends PureComponent {
 
         return (
             <div>
-                <h2>Sauces!</h2>
-                <div className="sauces">
-                    <form>
-                        <ul>
-                        {this.props.sauces.map((sauce) => {
-                            if (sauce.price === 0) {
-                                return (<li key={sauce.id}>
-                                    <label>
-                                        <input 
-                                        type="radio"
-                                        name="sauce"
-                                        value={sauce.price}
-                                        onChange={this.handleChange}
-                                        />
-                                            {sauce.desc}
-                                    </label>
-                                </li>)
-                            } else {
-                                return (<li key={sauce.id}>
-                                    <label>
-                                        <input 
-                                        type="radio"
-                                        name="sauce"
-                                        value={sauce.price}
-                                        onChange={this.handleChange}
-                                        />
-                                            {sauce.desc} (+ €{sauce.price})
-                                    </label>
-                                </li>)
-                            }
-                            
-                        })}
-                        </ul>
-                    </form>
-                </div>
+                <Subheader>
+                    <h2>Now add some sauce:</h2>
+                </Subheader>
+                <Paper>
+                    <div className="sauces">
+                        <form>
+                            <List>
+                            {this.props.sauces.map((sauce) => {
+                                if (sauce.price === 0) {
+                                    return (<li key={sauce.id}>
+                                        <label>
+                                            <input 
+                                            type="radio"
+                                            name="sauce"
+                                            value={sauce.price}
+                                            onChange={this.handleChange}
+                                            />
+                                                {sauce.desc}
+                                        </label>
+                                    </li>)
+                                } else {
+                                    return (<li key={sauce.id}>
+                                        <label>
+                                            <input 
+                                            type="radio"
+                                            name="sauce"
+                                            value={sauce.price}
+                                            onChange={this.handleChange}
+                                            />
+                                                {sauce.desc} (+ €{sauce.price})
+                                        </label>
+                                    </li>)
+                                }
+                                
+                            })}
+                            </List>
+                        </form>
+                    </div>
+                </Paper>
             </div>
         )
     }
