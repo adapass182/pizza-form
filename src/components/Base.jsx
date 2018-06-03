@@ -28,8 +28,7 @@ class Base extends PureComponent {
                                             value={base.price}
                                             onChange={this.handleChange}
                                             />
-                                                Size:{base.desc}
-                                                Price:{base.price}
+                                                {base.desc} €{base.price}
                                         </label>
                                     </li>)
                         })}

@@ -19,18 +19,32 @@ class Sauce extends PureComponent {
                     <form>
                         <ul>
                         {this.props.sauces.map((sauce) => {
-                            return (<li key={sauce.id}>
-                                        <label>
-                                            <input 
-                                            type="radio"
-                                            name="sauce"
-                                            value={sauce.price}
-                                            onChange={this.handleChange}
-                                            />
-                                                {sauce.desc}
-                                                {sauce.price}
-                                        </label>
-                                    </li>)
+                            if (sauce.price === 0) {
+                                return (<li key={sauce.id}>
+                                    <label>
+                                        <input 
+                                        type="radio"
+                                        name="sauce"
+                                        value={sauce.price}
+                                        onChange={this.handleChange}
+                                        />
+                                            {sauce.desc}
+                                    </label>
+                                </li>)
+                            } else {
+                                return (<li key={sauce.id}>
+                                    <label>
+                                        <input 
+                                        type="radio"
+                                        name="sauce"
+                                        value={sauce.price}
+                                        onChange={this.handleChange}
+                                        />
+                                            {sauce.desc} €{sauce.price}
+                                    </label>
+                                </li>)
+                            }
+                            
                         })}
                         </ul>
                     </form>
