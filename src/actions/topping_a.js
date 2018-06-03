@@ -1,4 +1,4 @@
-import { ADD_TOPPING, REMOVE_TOPPING } from './types'
+import { ADD_TOPPING, REM_TOPPING } from './types'
 
 export const addTopping = (topping) => {
   return {
@@ -7,8 +7,8 @@ export const addTopping = (topping) => {
   }
 }
 
-export const removeTopping = () => {
+export const remTopping = () => {
   return {
-    type: REMOVE_TOPPING
+    type: REM_TOPPING
   }
 }

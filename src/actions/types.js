@@ -1,4 +1,6 @@
 export const ADD_BASE = 'ADD_BASE'
 export const ADD_SAUCE = 'ADD_SAUCE'
 export const ADD_TOPPING = 'ADD_TOPPING'
-export const REMOVE_TOPPING = 'REMOVE_TOPPING'
+export const REM_TOPPING = 'REM_TOPPING'
+export const ADD_DRONE = 'ADD_DRONE'
+export const REM_DRONE = 'REM_DRONE'

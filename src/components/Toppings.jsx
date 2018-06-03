@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 //Actions:
-import { addTopping, removeTopping } from '../actions/topping_a'
+import { addTopping, remTopping } from '../actions/topping_a'
 
 
 class Toppings extends PureComponent {
@@ -20,7 +20,7 @@ class Toppings extends PureComponent {
         }
         if (!event.target.checked && this.toppingCount <= 3) {
             --this.toppingCount
-            return this.props.removeTopping()
+            return this.props.remTopping()
         }
     }
 
@@ -60,4 +60,4 @@ const mapStateToProps = (state) => {
     }
   }
 
-export default connect(mapStateToProps, { addTopping, removeTopping })(Toppings)
+export default connect(mapStateToProps, { addTopping, remTopping })(Toppings)
