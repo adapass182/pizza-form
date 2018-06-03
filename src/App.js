@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import './App.css'
 
 // Actions
-import { addBase, removeBase } from './actions/base_a'
+
 
 // Components
 import Base from './components/Base'
@@ -16,10 +16,6 @@ import PizzaCart from './components/PizzaCart'
 
 
 class App extends Component {
-
-    handleChangeBase = () => {
-        addBase()
-    }
 
     render() {
         return (
